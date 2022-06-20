@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cancel Ticket Portal</title>
+</head>
+<body><!DOCTYPE html>
+    <html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link href="https://fonts.googleapis.com/css2?family=Ubuntu:wght@300&display=swap" rel="stylesheet">'
+        <title>Movie Ticket Booking Portal</title>
+        <style>
+            *{
+                box-sizing:border box;
+                margin:0;
+                padding:0;
+            }
+            #mybody{
+                padding: 60px 30px;
+                border: none;
+                margin: 50px 150px 50px 150px;
+                width: 1000px;
+                height: 700px;
+                font-size: 25px;
+                font-family: 'Ubuntu', sans-serif;
+                background-color: rgb(223, 243, 240);
+                border-radius: 50px;
+            }
+            
+            #id3{
+                padding: 10px;
+                width: 200px;
+                border-color: grey;
+                margin: 15px 0px 15px 400px;
+                border-radius: 10px;
+                font-size: 20px;
+                text-decoration: none;
+            }
+            .myclass{
+                padding: 10px;
+            }
+            #myheading{
+                padding: 25px;
+            }
+            .mytext1{
+                height: 30px;
+                border-radius: 10px;
+                border: 3px solid grey;
+            }
+    
+            .myid{
+                padding: 10px;
+                border:solid 3px rgb(111, 102, 102);
+            }
+        </style>
+    </head>
+    <body id="mybody">
+        <h1 id="myheading">Cancel Your Seat(Pls come Again !!) </h1>
+        <label><a href="/users/movie">See all Movies in the database</a></label> <br>
+        <label><a href="/users/cinema">See all Cinema in the database</a></label> <br>
+        <label><a href="/users/booking">See all Booking in the database</a></label> <br>
+        <label><a href="/users/user">See all Users in the database</a></label> <br>
+        <form action="/users/create5" method="POST">
+            <div class="myclass">
+               Name: <input type="text" class="mytext1" name="user_name" id="user_name" required/> 
+            </div>
+            <div class="myclass">Email Address: <input type="email" class="mytext1" name="user_email" id="user_email" required/></div>
+            <br>
+            <br>
+            <div class="myclass">
+                Movie Name:<input type="text" class="mytext1" name="movie_name" id="movie_name" required/> 
+            </div>
+            <div class="myclass">
+                Movie Language:<input type="text" class="mytext1" name="movie_language" id="movie_language" required /> 
+            </div>
+            <br>
+            <br>
+            <div class="myclass">
+                Cinema Name:<input type="text" class="mytext1" name="cinema_name" id="cinema_name" required/> 
+            </div>
+            <div class="myclass">
+                Cinema Location:<input type="text" class="mytext1" required name="cinema_location" id="cinema_location"/> 
+            </div>
+            <br>
+            <br>
+            <div class="myclass">
+                Time Slot: <input type="number" min="1" max="4" class="mytext1" name="time_slot" id="time_slot" required/> (Enter in between 1 to 4)
+            </div>
+            <br>
+            <div class="myclass">
+                Seat Number: <input type="number" min="1" max="10" class="mytext1" name="seat_no" id="seat_no" required/> (Enter in between 1 to 10)
+            </div>
+            <br>
+            <br>
+            <div class="myclass" >
+                <button id="id3">Cancel Ticket</button>
+             </div>
+              
+    
+    
+            
+    
+        </form>
+        <table>
+            <thread>
+                <tr>
+                    <th>Time Slot No.</th>
+                    <th>Time</th>
+                </tr>
+            </thread>
+            <tbody>
+                <tr>
+                    <td>1</td>
+                    <td>9am-12pm</td>
+                </tr>
+                <tr>
+                    <td>2</td>
+                    <td>1pm-4pm</td>
+                </tr>
+                <tr>
+                    <td>3</td>
+                    <td>5pm-8pm</td>
+                </tr>
+                <tr>
+                    <td>4</td>
+                    <td>9pm-12am</td>
+                </tr>
+            </tbody>
+        </table>
+        
+    </body>
+    </html>
+    
+    
+</body>
+</html>

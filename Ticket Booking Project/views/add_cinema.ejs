@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin-add movies</title>
+    <style>
+        .myclass{
+            padding: 10px;
+            margin:20px;
+            font-size:large;
+            }
+        #buttonid{
+            margin-left:700px;
+        }
+        #formid{
+            margin-top:320px;
+            margin-left:450px;
+            font-size: 30px;
+        }
+        .mytext1{
+            border-radius: 20px;
+            width:200px;
+            border-color: red;
+        }
+
+    </style>
+</head>
+<body>
+<!--====form section start====-->
+<div class="user-detail">
+    <!-- <h2>Create User Data</h2> -->
+    <form action="/users/create1" method="POST">
+        <div id="formid" class="myclass">
+          <label><a href="/users/cinema">See all Cinema in the database</a></label> <br>
+          
+          <label>Enter Cinema To Add in the database: </label>
+          <input type="text" placeholder="Enter Full Name" name="cinema_name" required id="cinema_name" class="mytext1"> <br>
+          <label>Location: </label>
+          <input type="text" placeholder="Enter Location" name="cinema_location" required id="cinema_location" class="mytext1"> <br>
+
+          <button type="submit">Submit</button>
+        </div>
+</div>
+<!--====form section start====-->
+</body>
+</html>
