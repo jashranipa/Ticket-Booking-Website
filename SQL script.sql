@@ -22,9 +22,9 @@ insert into user (user_name,user_email) values ('Sam','sam@gmail.com');
 insert into user (user_name,user_email) values ('Jam','jam@gmail.com');
 insert into user (user_name,user_email) values ('AK','AK@gmail.com');
 -- add users by admin
-START TRANSACTION; LOCK TABLES user WRITE; INSERT INTO user (user_name,user_email) values ('Jaysheel','jaysheel@gmail.com')  ;UNLOCK TABLES; 
+START TRANSACTION; LOCK TABLES user WRITE; INSERT INTO user (user_name,user_email) values ('Jaysheel','jaysheel@gmail.com'); UNLOCK TABLES; 
 -- delete users by admin
-START TRANSACTION;LOCK TABLES user WRITE;delete from user where user_name ='Sam' and user_email=+'sam@gmail.com';UNLOCK TABLES;
+START TRANSACTION; LOCK TABLES user WRITE; delete from user where user_name ='Sam' and user_email=+'sam@gmail.com'; UNLOCK TABLES;
 
 -- creating movie table
 
@@ -46,7 +46,7 @@ insert into movie (movie_name,movie_language) values ('war','english');
 insert into movie (movie_name,movie_language) values ('war','hindi');
 
 -- add movies by admin
-START TRANSACTION; LOCK TABLES MOVIE WRITE; insert into movie (movie_name,movie_language) values ('kashmir files','hindi');
+START TRANSACTION; LOCK TABLES MOVIE WRITE; insert into movie (movie_name,movie_language) values ('kashmir files','hindi'); UNLOCK TABLES;
 
 -- delete movies by admin
 START TRANSACTION;LOCK TABLES MOVIE WRITE;delete from movie where movie_name = "kg" and movie_language= "hindi"; UNLOCK TABLES;
@@ -69,11 +69,11 @@ insert into cinema (cinema_name,cinema_location) values ('INOX','Rajasthan');
 
 -- add cinema by admin
 
-START TRANSACTION; LOCK TABLES CINEMA WRITE; insert into cinema (cinema_name,cinema_location) values ('PVR','Rajasthan');UNLOCK TABLES;
+START TRANSACTION; LOCK TABLES CINEMA WRITE; insert into cinema (cinema_name,cinema_location) values ('PVR','Rajasthan'); UNLOCK TABLES;
 
 -- delete cinema by admin
 
-START TRANSACTION;LOCK TABLES CINEMA WRITE; delete from cinema where cinema_name = "INOX" and cinema_location="Rajasthan" ;UNLOCK TABLES;
+START TRANSACTION;LOCK TABLES CINEMA WRITE; delete from cinema where cinema_name = "INOX" and cinema_location="Rajasthan"; UNLOCK TABLES;
 
 -- creating booking table
 
@@ -95,11 +95,15 @@ unique(time_slot,seat_no,movie_id,cinema_id,user_id)
 -- booking done by the users
 
 
-START TRANSACTION;LOCK TABLES booking WRITE,movie READ,cinema READ,user READ;insert into booking (movie_id,cinema_id,user_id,time_slot,seat_no) values ((select movie_id from movie where movie_name= "Kashmir files" and movie_language="hindi"),(select cinema_id from cinema where cinema_name="PVR" and cinema_location="Rajasthan"),(select user_id from user where user_name="Jaysheel" and user_email="jaysheel@gmail.com"),1,9);Unlock Tables;
+START TRANSACTION; LOCK TABLES booking WRITE,movie READ,cinema READ,user READ; 
+insert into booking (movie_id,cinema_id,user_id,time_slot,seat_no) values ((select movie_id from movie where movie_name= "Kashmir files" and movie_language="hindi"),(select cinema_id from cinema where cinema_name="PVR" and cinema_location="Rajasthan"),(select user_id from user where user_name="Jaysheel" and user_email="jaysheel@gmail.com"),1,9);
+Unlock Tables;
 
 -- cancel booking done by the users
 
-START TRANSACTION;LOCK TABLES booking WRITE,movie READ,cinema READ,user READ;delete from booking where movie_id=(select movie_id from movie where movie_name="Kashmir Files" and movie_language="hindi") and cinema_id=(select cinema_id from cinema where cinema_name="PVR" and cinema_location ="Rajasthan") and user_id=(select user_id from user where user_name="Jaysheel" and user_email="jaysheel@gmail.com") and time_slot="1" and seat_no="9";UNLOCK TABLES;
+START TRANSACTION;LOCK TABLES booking WRITE,movie READ,cinema READ,user READ;
+delete from booking where movie_id=(select movie_id from movie where movie_name="Kashmir Files" and movie_language="hindi") and cinema_id=(select cinema_id from cinema where cinema_name="PVR" and cinema_location ="Rajasthan") and user_id=(select user_id from user where user_name="Jaysheel" and user_email="jaysheel@gmail.com") and time_slot="1" and seat_no="9";
+UNLOCK TABLES;
 
 
 
