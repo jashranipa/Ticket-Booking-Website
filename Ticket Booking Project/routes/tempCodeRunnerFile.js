@@ -1,1 +1,0 @@
-START TRANSACTION;LOCK TABLES user WRITE;delete from user where user_name = ' + '"' +name + '" ' +' and user_email= ' + '"' + email + '" ' +';UNLOCK TABLES;
