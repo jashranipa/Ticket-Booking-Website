@@ -24,7 +24,7 @@ insert into user (user_name,user_email) values ('AK','AK@gmail.com');
 -- add users by admin
 START TRANSACTION; LOCK TABLES user WRITE; INSERT INTO user (user_name,user_email) values ('Jaysheel','jaysheel@gmail.com'); UNLOCK TABLES; Commit;
 -- delete users by admin
-START TRANSACTION; LOCK TABLES user WRITE; delete from user where user_name ='Sam' and user_email=+'sam@gmail.com'; UNLOCK TABLES; Commit;
+START TRANSACTION; LOCK TABLES user WRITE; delete from user where user_name ='Sam' and user_email='sam@gmail.com'; UNLOCK TABLES; Commit;
 
 -- creating movie table
 
